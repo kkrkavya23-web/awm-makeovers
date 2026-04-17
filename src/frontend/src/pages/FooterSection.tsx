@@ -185,19 +185,13 @@ export default function FooterSection() {
           <p className="text-xs text-white/30 flex items-center gap-1">
             © {year} AWM: Makeovers By Aastha · Lucknow
           </p>
-          <p className="text-xs text-white/25 flex items-center gap-1">
-            Built with{" "}
-            <Heart className="w-3 h-3 mx-0.5" style={{ color: "#E91E63" }} />{" "}
-            using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== "undefined" ? window.location.hostname : "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white/50 transition-colors underline"
-            >
-              caffeine.ai
-            </a>
-          </p>
+         <p className="text-xs text-white/30 flex items-center gap-1">
+  © {year} AWM: Makeovers By Aastha · Lucknow
+</p>
+
+<p className="text-xs text-white/25">
+  Designed & Developed by Kavya
+</p>
         </div>
       </div>
     </footer>

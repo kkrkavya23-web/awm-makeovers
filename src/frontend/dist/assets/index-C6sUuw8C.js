@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/HeroSection-DtP-EiOs.js","assets/badge-BAyG6EgK.js","assets/button-D6n3Vb-9.js","assets/star-Bl-Q1ikm.js","assets/createLucideIcon-BK_9rBQU.js","assets/sparkles-CfH5B7JF.js","assets/award-MNkw7gw8.js","assets/phone-C6uMKMF2.js","assets/ServicesSection-DhAypjAk.js","assets/heart-DJqoK7_p.js","assets/PortfolioSection-CYeE6p96.js","assets/index-CR5o1DLD.js","assets/chevron-right-B0530mvf.js","assets/WhyChooseUsSection-DCDmAvYn.js","assets/clock-6VNT7DZO.js","assets/map-pin-i9Vx4DeH.js","assets/TestimonialsSection-B6d9VJV3.js","assets/FAQSection-CJOM6bzz.js","assets/MapContactSection--cG46ilB.js","assets/instagram-Diwjn8V5.js","assets/FooterSection-Uo8PWrLx.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/HeroSection-Dr4PGYfN.js","assets/badge-DqKpRZP4.js","assets/button-B-15Jzot.js","assets/star-DVylEgbG.js","assets/createLucideIcon-ZOu9CJEQ.js","assets/sparkles-C3bYJqTj.js","assets/award-uRtjXfi-.js","assets/phone-CIXmFEYO.js","assets/map-pin-DrpbUpyB.js","assets/ServicesSection-Cnu4sRU5.js","assets/heart-BIM1TNwx.js","assets/scissors-CTm_xfPn.js","assets/PortfolioSection-IMHPIYke.js","assets/index-3X_qfGc2.js","assets/chevron-right-BT20xBRy.js","assets/WhyChooseUsSection-ufXIiNZu.js","assets/clock-DyDq3UIh.js","assets/message-circle-BHAMIDT3.js","assets/TestimonialsSection-UEkr5bSp.js","assets/FAQSection-Duh47SvD.js","assets/MapContactSection-BIyGU2xi.js","assets/instagram-Hr9vI7_l.js","assets/FooterSection-Ma-DY5s4.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -26446,8 +26446,8 @@ function FaInstagram(props) {
   return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" }, "child": [] }] })(props);
 }
 function FloatingButtons() {
-  const whatsappUrl = "https://wa.me/919451819583?text=Hi%20Aastha%2C%20I%27d%20like%20to%20book%20a%20bridal%20makeup%20consultation!";
-  const instagramUrl = "https://www.instagram.com/awm_makeovers_by_aastha/";
+  const whatsappUrl = "https://wa.me/919611366425?text=Hi%20Shreya%2C%20I'd%20like%20to%20book%20a%20bridal%20makeup%20consultation!";
+  const instagramUrl = "https://www.instagram.com/shreya_makeup_hair/";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.a,
@@ -26460,7 +26460,7 @@ function FloatingButtons() {
         className: "fixed bottom-6 left-6 z-50 flex items-center justify-center w-14 h-14 rounded-full",
         style: {
           background: "linear-gradient(135deg, #25D366, #128C7E)",
-          boxShadow: "0 4px 20px rgba(37, 211, 102, 0.45), 0 0 0 3px rgba(37,211,102,0.15)"
+          boxShadow: "0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 3px rgba(37,211,102,0.18), 0 0 40px rgba(37,211,102,0.2)"
         },
         initial: { scale: 0, opacity: 0 },
         animate: { scale: 1, opacity: 1 },
@@ -26480,8 +26480,8 @@ function FloatingButtons() {
         "aria-label": "Follow on Instagram",
         className: "fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full",
         style: {
-          background: "linear-gradient(135deg, #E91E63, #9C27B0, #FF5722)",
-          boxShadow: "0 4px 20px rgba(233, 30, 99, 0.5), 0 0 0 3px rgba(233,30,99,0.15)"
+          background: "linear-gradient(135deg, #C4956A, #8B5E3C, #D4A96A)",
+          boxShadow: "0 4px 20px rgba(139, 94, 60, 0.45), 0 0 0 3px rgba(212,169,106,0.2), 0 0 40px rgba(212,169,106,0.2)"
         },
         initial: { scale: 0, opacity: 0 },
         animate: { scale: 1, opacity: 1 },
@@ -26815,39 +26815,36 @@ const Toaster = ({ ...props }) => {
     }
   );
 };
-const HeroSection = reactExports.lazy(() => __vitePreload(() => import("./HeroSection-DtP-EiOs.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7]) : void 0));
-const ServicesSection = reactExports.lazy(() => __vitePreload(() => import("./ServicesSection-DhAypjAk.js"), true ? __vite__mapDeps([8,1,3,4,9,5]) : void 0));
-const PortfolioSection = reactExports.lazy(() => __vitePreload(() => import("./PortfolioSection-CYeE6p96.js"), true ? __vite__mapDeps([10,1,11,4,12]) : void 0));
-const WhyChooseUsSection = reactExports.lazy(() => __vitePreload(() => import("./WhyChooseUsSection-DCDmAvYn.js"), true ? __vite__mapDeps([13,1,3,4,6,9,14,15]) : void 0));
-const TestimonialsSection = reactExports.lazy(() => __vitePreload(() => import("./TestimonialsSection-B6d9VJV3.js"), true ? __vite__mapDeps([16,1,3,4,11,12]) : void 0));
-const FAQSection = reactExports.lazy(() => __vitePreload(() => import("./FAQSection-CJOM6bzz.js"), true ? __vite__mapDeps([17,1,4,11]) : void 0));
-const MapContactSection = reactExports.lazy(() => __vitePreload(() => import("./MapContactSection--cG46ilB.js"), true ? __vite__mapDeps([18,1,2,7,4,15,14,19]) : void 0));
-const FooterSection = reactExports.lazy(() => __vitePreload(() => import("./FooterSection-Uo8PWrLx.js"), true ? __vite__mapDeps([20,5,4,19,7,15,9]) : void 0));
+const HeroSection = reactExports.lazy(() => __vitePreload(() => import("./HeroSection-Dr4PGYfN.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8]) : void 0));
+const ServicesSection = reactExports.lazy(() => __vitePreload(() => import("./ServicesSection-Cnu4sRU5.js"), true ? __vite__mapDeps([9,1,3,4,10,11,5]) : void 0));
+const PortfolioSection = reactExports.lazy(() => __vitePreload(() => import("./PortfolioSection-IMHPIYke.js"), true ? __vite__mapDeps([12,1,13,4,14]) : void 0));
+const WhyChooseUsSection = reactExports.lazy(() => __vitePreload(() => import("./WhyChooseUsSection-ufXIiNZu.js"), true ? __vite__mapDeps([15,1,3,4,6,11,10,8,16,17]) : void 0));
+const TestimonialsSection = reactExports.lazy(() => __vitePreload(() => import("./TestimonialsSection-UEkr5bSp.js"), true ? __vite__mapDeps([18,1,3,4,13,14]) : void 0));
+const FAQSection = reactExports.lazy(() => __vitePreload(() => import("./FAQSection-Duh47SvD.js"), true ? __vite__mapDeps([19,1,17,4,13]) : void 0));
+const MapContactSection = reactExports.lazy(() => __vitePreload(() => import("./MapContactSection-BIyGU2xi.js"), true ? __vite__mapDeps([20,1,2,7,4,8,16,21]) : void 0));
+const FooterSection = reactExports.lazy(() => __vitePreload(() => import("./FooterSection-Ma-DY5s4.js"), true ? __vite__mapDeps([22,5,4,21,7,8,10]) : void 0));
 function SectionFallback() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
       className: "min-h-screen flex items-center justify-center",
-      style: { background: "var(--color-dark-deep)" },
+      style: { background: "var(--color-cream)" },
       children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
-          className: "w-12 h-12 rounded-full border-2 border-t-transparent animate-spin",
-          style: { borderColor: "#E91E63", borderTopColor: "transparent" }
+          className: "w-12 h-12 rounded-full border-2 animate-spin",
+          style: { borderColor: "#C4956A", borderTopColor: "transparent" }
         }
       )
     }
   );
 }
 function App() {
-  reactExports.useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
       className: "relative min-h-screen",
-      style: { background: "var(--color-dark-deep)" },
+      style: { background: "var(--color-cream)" },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "a",
@@ -26868,7 +26865,7 @@ function App() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { id: "footer", children: /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.Suspense, { fallback: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-32" }), children: /* @__PURE__ */ jsxRuntimeExports.jsx(FooterSection, {}) }) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(FloatingButtons, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, { position: "top-right", theme: "dark" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, { position: "top-right" })
       ]
     }
   );

@@ -1,26 +1,26 @@
 {
-  "overview": "AWM: Makeovers By Aastha is a luxury 3D animated portfolio website for a premier bridal makeup artist based in Lucknow. Features stunning pinkish-dark theme with advanced Three.js 3D animations, celebrity-grade portfolio showcase, Indian reviews, full services section, FAQ, and contact map.",
+  "overview": "Premium 3D animated website for Shreya Makeup & Hair — a bridal makeup and hair styling studio in Karwar, Karnataka. Features a luxurious beige and brown light theme with warm golden glow effects, glassmorphism cards, and advanced React Three Fiber 3D animations throughout.",
   "features": [
-    "3D animated hero section with floating particles and moving objects",
-    "Premium portfolio gallery with 12 bridal photo showcases",
-    "Services section with 3D card animations (Bridal, Party, Celebrity)",
-    "Indian testimonials with star ratings and scroll animations",
-    "Why Choose Us section highlighting celebrity collaborations",
-    "FAQ accordion with smooth transitions",
-    "Google Maps location embed for Lucknow studio",
-    "Floating WhatsApp and Instagram action buttons",
-    "Call-to-action section with booking animations",
-    "Full pinkish-dark luxury theme with blurry glow effects throughout"
+    "Premium 3D animated hero section with warm golden floating orbs and particles",
+    "Beige and brown light theme with golden glow and blur effects",
+    "Services section with glassmorphism cards for bridal, hair styling, party makeup",
+    "Portfolio gallery displaying all 8 bridal photos with lightbox",
+    "Indian testimonials with South Indian bride context",
+    "Why Choose Us section with 3D animated icons",
+    "FAQ accordion with Karwar studio info",
+    "Contact form with WhatsApp integration",
+    "Embedded Karwar map section",
+    "Floating WhatsApp and Instagram buttons"
   ],
-  "category": "portfolio-beauty",
+  "category": "business-portfolio",
   "tags": [
     "makeup-artist",
     "bridal",
+    "hair-styling",
+    "karnataka",
     "3d-animations",
-    "luxury",
     "portfolio",
-    "indian-wedding",
-    "beauty-studio"
+    "premium"
   ],
-  "last_updated": "2026-04-17T18:56:02.632Z"
+  "last_updated": "2026-05-05T15:10:55.732Z"
 }

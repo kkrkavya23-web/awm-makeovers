@@ -1,6 +1,6 @@
-import { r as reactExports } from "./index-qSaXK_m0.js";
-import { u as useFrame, d as MeshPhysicalMaterial } from "./star-Bl-Q1ikm.js";
-import { c as createLucideIcon } from "./createLucideIcon-BK_9rBQU.js";
+import { r as reactExports } from "./index-C6sUuw8C.js";
+import { u as useFrame, a as MeshPhysicalMaterial } from "./star-DVylEgbG.js";
+import { c as createLucideIcon } from "./createLucideIcon-ZOu9CJEQ.js";
 function _extends() {
   return _extends = Object.assign ? Object.assign.bind() : function(n) {
     for (var e = 1; e < arguments.length; e++) {

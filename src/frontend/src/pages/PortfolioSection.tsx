@@ -10,108 +10,73 @@ const portfolioItems: PortfolioItem[] = [
     src: "/assets/photo1.png",
     alt: "Bridal Makeup Look 1",
     category: "Bridal",
-    title: "Golden Lehenga Bride",
-    description: "Traditional bridal look with smoky eyes & deep rose lips",
+    title: "Classic Bridal Glow",
+    description:
+      "Traditional South Indian bridal look with luminous skin finish",
   },
   {
     id: 2,
     src: "/assets/photo2.png",
     alt: "Bridal Makeup Look 2",
-    category: "Bridal",
-    title: "Royal Red Bridal",
-    description: "Classic maang tikka & heavy gold jewellery coordination",
+    category: "Hair Styling",
+    title: "Bridal Hair Transformation",
+    description:
+      "Elegant bridal updo with floral accessories and traditional styling",
   },
   {
     id: 3,
     src: "/assets/photo3.png",
     alt: "Bridal Look 3",
-    category: "Engagement",
-    title: "Dewy Engagement Glow",
-    description: "Soft & luminous roka look — natural skin finish",
+    category: "Bridal",
+    title: "Dewy Bridal Look",
+    description:
+      "Soft & luminous bridal transformation with natural skin finish",
   },
   {
     id: 4,
     src: "/assets/photo4.png",
     alt: "Bridal Look 4",
     category: "Reception",
-    title: "Midnight Glam Reception",
-    description: "Dramatic eye art meets sculptural contouring",
+    title: "Evening Reception Glam",
+    description:
+      "Dramatic eye art meets sculptural contouring for reception night",
   },
   {
     id: 5,
     src: "/assets/photo5.png",
-    alt: "Celebrity Look 5",
-    category: "Celebrity",
-    title: "Celeb Editorial Look",
-    description: "High-fashion photoshoot ready — magazine cover finish",
+    alt: "Bridal Look 5",
+    category: "Engagement",
+    title: "Engagement Radiance",
+    description: "Soft glam engagement look with dewy skin and defined eyes",
   },
   {
     id: 6,
     src: "/assets/photo6.png",
     alt: "Bridal Look 6",
     category: "Bridal",
-    title: "Pastel Lehenga Bride",
-    description: "Soft pink & peach bridal palette for pastel lehengas",
+    title: "Karnataka Bridal Artistry",
+    description: "Traditional Karnataka wedding bridal look with gold accents",
   },
   {
     id: 7,
     src: "/assets/photo7.png",
-    alt: "Bridal Look 7",
-    category: "Mehndi",
-    title: "Mehndi Festive Glow",
-    description: "Vibrant & radiant look for pre-wedding mehendi ceremony",
+    alt: "Hair Look 7",
+    category: "Hair Styling",
+    title: "Festive Hair Beauty",
+    description: "Vibrant & radiant hair styling for pre-wedding ceremonies",
   },
   {
     id: 8,
     src: "/assets/photo8.png",
     alt: "Bridal Look 8",
-    category: "Sangeet",
-    title: "Sangeet Night Glam",
-    description: "Bold eyes & shimmer for the dance floor",
-  },
-  {
-    id: 9,
-    src: "/assets/photo9.png",
-    alt: "Bridal Look 9",
     category: "Bridal",
-    title: "Saree Drape & Look",
-    description: "Flawless coordination with traditional Kanjeevaram saree",
-  },
-  {
-    id: 10,
-    src: "/assets/photo10.png",
-    alt: "Bridal Look 10",
-    category: "Celebrity",
-    title: "Film Premiere Look",
-    description: "Glossy, camera-ready for premiere night",
-  },
-  {
-    id: 11,
-    src: "/assets/photo11.png",
-    alt: "Bridal Look 11",
-    category: "Reception",
-    title: "White & Gold Reception",
-    description: "Ethereal look for a white wedding reception",
-  },
-  {
-    id: 12,
-    src: "/assets/photo12.png",
-    alt: "Bridal Look 12",
-    category: "Bridal",
-    title: "Classic Bridal Artistry",
-    description: "Timeless bridal look — deep kajal, maang tikka perfection",
+    title: "Silk Saree Bridal Look",
+    description:
+      "Timeless bridal look coordinated with silk saree and temple jewellery",
   },
 ];
 
-const categories = [
-  "All",
-  "Bridal",
-  "Celebrity",
-  "Reception",
-  "Engagement",
-  "Mehndi",
-  "Sangeet",
-];
+const categories = ["All", "Bridal", "Hair Styling", "Reception", "Engagement"];
 
 export default function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -136,15 +101,15 @@ export default function PortfolioSection() {
       data-ocid="portfolio.section"
       className="relative py-24 overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%)",
+        background: "linear-gradient(180deg, #FAF6F0 0%, #F5EFE6 100%)",
       }}
     >
-      {/* Glow bg */}
+      {/* Warm glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(233,30,99,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,169,106,0.1) 0%, transparent 70%)",
         }}
       />
 
@@ -160,20 +125,23 @@ export default function PortfolioSection() {
           <Badge
             className="mb-4 px-4 py-1.5 text-sm"
             style={{
-              background: "rgba(233,30,99,0.1)",
-              border: "1px solid rgba(233,30,99,0.3)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.28)",
+              color: "#8B5E3C",
             }}
           >
             ✨ Real Transformations
           </Badge>
-          <h2 className="heading-section text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2
+            className="heading-section text-4xl lg:text-5xl font-bold mb-4"
+            style={{ color: "#2D1B0E" }}
+          >
             A Canvas of{" "}
-            <span className="text-gradient-pink">Timeless Beauty</span>
+            <span className="text-gradient-brown">Timeless Beauty</span>
           </h2>
-          <p className="text-white/55 max-w-lg mx-auto text-lg">
-            Every bride is a masterpiece. Browse Aastha's portfolio of real
-            transformations — each one a story told through artistry.
+          <p className="max-w-lg mx-auto text-lg" style={{ color: "#6B4226" }}>
+            Every bride is a masterpiece. Browse Shreya's portfolio of real
+            transformations from Karwar and Karnataka weddings.
           </p>
         </motion.div>
 
@@ -189,22 +157,22 @@ export default function PortfolioSection() {
             <button
               type="button"
               key={cat}
-              data-ocid={`portfolio.filter.${cat.toLowerCase()}`}
+              data-ocid={`portfolio.filter.${cat.toLowerCase().replace(" ", "_")}`}
               onClick={() => setActiveCategory(cat)}
               className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300"
               style={{
                 background:
                   activeCategory === cat
-                    ? "linear-gradient(135deg, #E91E63, #C2185B)"
-                    : "rgba(233,30,99,0.08)",
-                color: activeCategory === cat ? "white" : "#F06292",
+                    ? "linear-gradient(135deg, #8B5E3C, #C4956A)"
+                    : "rgba(139,94,60,0.08)",
+                color: activeCategory === cat ? "white" : "#8B5E3C",
                 border:
                   activeCategory === cat
                     ? "none"
-                    : "1px solid rgba(233,30,99,0.2)",
+                    : "1px solid rgba(139,94,60,0.22)",
                 boxShadow:
                   activeCategory === cat
-                    ? "0 4px 16px rgba(233,30,99,0.3)"
+                    ? "0 4px 16px rgba(139,94,60,0.25)"
                     : "none",
               }}
             >
@@ -213,9 +181,9 @@ export default function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Masonry-style grid */}
+        {/* Photo grid — show all 8 photos */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
           layout
         >
           <AnimatePresence mode="popLayout">
@@ -224,54 +192,75 @@ export default function PortfolioSection() {
                 key={item.id}
                 data-ocid={`portfolio.item.${item.id}`}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.92 }}
                 transition={{ duration: 0.35 }}
                 className="relative group cursor-pointer rounded-2xl overflow-hidden aspect-[3/4]"
-                style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
+                style={{
+                  boxShadow:
+                    "0 4px 20px rgba(139,94,60,0.15), 0 0 0 1px rgba(196,149,106,0.2)",
+                }}
                 onClick={() => openLightbox(idx)}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow:
+                    "0 12px 40px rgba(139,94,60,0.25), 0 0 0 2px rgba(212,169,106,0.4)",
+                }}
               >
                 <img
                   src={item.src}
                   alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Overlay */}
+                {/* Warm overlay on hover */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(13,13,26,0.92) 0%, rgba(13,13,26,0.4) 50%, transparent 100%)",
+                      "linear-gradient(to top, rgba(45,27,14,0.85) 0%, rgba(45,27,14,0.3) 50%, transparent 100%)",
                   }}
                 >
                   <Badge
                     className="self-start mb-2 text-xs"
                     style={{
-                      background: "rgba(233,30,99,0.8)",
+                      background: "rgba(139,94,60,0.85)",
                       color: "white",
                       border: "none",
                     }}
                   >
                     {item.category}
                   </Badge>
-                  <p className="text-white text-sm font-semibold">
+                  <p
+                    className="text-sm font-semibold"
+                    style={{ color: "#FAF6F0" }}
+                  >
                     {item.title}
                   </p>
-                  <p className="text-white/65 text-xs mt-0.5">
+                  <p
+                    className="text-xs mt-0.5"
+                    style={{ color: "rgba(250,246,240,0.75)" }}
+                  >
                     {item.description}
                   </p>
                   <div className="flex items-center gap-1 mt-2">
                     <ZoomIn
                       className="w-3.5 h-3.5"
-                      style={{ color: "#F06292" }}
+                      style={{ color: "#D4A96A" }}
                     />
-                    <span className="text-xs" style={{ color: "#F06292" }}>
+                    <span className="text-xs" style={{ color: "#D4A96A" }}>
                       Click to expand
                     </span>
                   </div>
                 </div>
+
+                {/* Warm glow border effect */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    boxShadow: "inset 0 0 0 2px rgba(212,169,106,0.5)",
+                  }}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -287,8 +276,8 @@ export default function PortfolioSection() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             style={{
-              background: "rgba(13,13,26,0.95)",
-              backdropFilter: "blur(20px)",
+              background: "rgba(45,27,14,0.92)",
+              backdropFilter: "blur(24px)",
             }}
             onClick={closeLightbox}
           >
@@ -303,13 +292,19 @@ export default function PortfolioSection() {
                 src={filtered[lightboxIndex].src}
                 alt={filtered[lightboxIndex].alt}
                 className="w-full rounded-2xl"
-                style={{ boxShadow: "0 24px 64px rgba(233,30,99,0.3)" }}
+                style={{
+                  boxShadow:
+                    "0 24px 64px rgba(212,169,106,0.35), 0 0 0 2px rgba(212,169,106,0.3)",
+                }}
               />
               <div className="mt-4 text-center">
-                <p className="text-white font-semibold">
+                <p className="font-semibold" style={{ color: "#FAF6F0" }}>
                   {filtered[lightboxIndex].title}
                 </p>
-                <p className="text-white/55 text-sm mt-1">
+                <p
+                  className="text-sm mt-1"
+                  style={{ color: "rgba(250,246,240,0.65)" }}
+                >
                   {filtered[lightboxIndex].description}
                 </p>
               </div>
@@ -318,7 +313,9 @@ export default function PortfolioSection() {
                 onClick={closeLightbox}
                 data-ocid="portfolio.lightbox_close"
                 className="absolute -top-4 -right-4 w-9 h-9 rounded-full flex items-center justify-center"
-                style={{ background: "#E91E63" }}
+                style={{
+                  background: "linear-gradient(135deg, #8B5E3C, #C4956A)",
+                }}
               >
                 <X className="w-4 h-4 text-white" />
               </button>
@@ -329,7 +326,7 @@ export default function PortfolioSection() {
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center glass"
                 aria-label="Previous"
               >
-                <ChevronLeft className="w-5 h-5 text-white" />
+                <ChevronLeft className="w-5 h-5" style={{ color: "#2D1B0E" }} />
               </button>
               <button
                 type="button"
@@ -338,7 +335,10 @@ export default function PortfolioSection() {
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center glass"
                 aria-label="Next"
               >
-                <ChevronRight className="w-5 h-5 text-white" />
+                <ChevronRight
+                  className="w-5 h-5"
+                  style={{ color: "#2D1B0E" }}
+                />
               </button>
             </motion.div>
           </motion.div>

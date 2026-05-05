@@ -20,30 +20,31 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Call / WhatsApp",
-    value: "+91 94518 19583",
-    href: "tel:+919451819583",
-    color: "#E91E63",
+    value: "+91 96113 66425",
+    href: "tel:+919611366425",
+    color: "#8B5E3C",
   },
   {
     icon: MapPin,
-    label: "Location",
-    value: "Lucknow, Uttar Pradesh",
-    href: "https://maps.google.com/?q=Lucknow",
-    color: "#C9A84C",
+    label: "Studio Address",
+    value:
+      "Shri Durga, HIG 117, New, Gunagi Wada, Habbuwada, K.H.B. Colony, Karwar, Karnataka 581306",
+    href: "https://maps.google.com/?q=Karwar,Karnataka",
+    color: "#C4956A",
   },
   {
     icon: Clock,
     label: "Working Hours",
     value: "Mon–Sat: 9AM – 8PM",
     href: undefined,
-    color: "#F06292",
+    color: "#D4A96A",
   },
   {
     icon: Instagram,
     label: "Instagram",
-    value: "@awm_makeovers_by_aastha",
-    href: "https://instagram.com/awm_makeovers_by_aastha",
-    color: "#E91E63",
+    value: "@shreya_makeup_hair",
+    href: "https://instagram.com/shreya_makeup_hair",
+    color: "#8B5E3C",
   },
 ];
 
@@ -59,9 +60,9 @@ export default function MapContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Hi Aastha! I'd like to enquire about a booking.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nWedding Date: ${formData.date}\nMessage: ${formData.message}`,
+      `Hi Shreya! I'd like to enquire about a booking.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nWedding Date: ${formData.date}\nMessage: ${formData.message}`,
     );
-    window.open(`https://wa.me/919451819583?text=${msg}`, "_blank");
+    window.open(`https://wa.me/919611366425?text=${msg}`, "_blank");
     setSubmitted(true);
     toast.success("Redirecting you to WhatsApp!", {
       description: "Your enquiry details have been pre-filled.",
@@ -74,14 +75,14 @@ export default function MapContactSection() {
       data-ocid="contact.section"
       className="relative py-24 overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #16213e 0%, #0d0d1a 100%)",
+        background: "linear-gradient(180deg, #EDE0D0 0%, #FAF6F0 100%)",
       }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(233,30,99,0.07) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(212,169,106,0.12) 0%, transparent 60%)",
         }}
       />
 
@@ -97,19 +98,22 @@ export default function MapContactSection() {
           <Badge
             className="mb-4 px-4 py-1.5 text-sm"
             style={{
-              background: "rgba(233,30,99,0.1)",
-              border: "1px solid rgba(233,30,99,0.3)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.28)",
+              color: "#8B5E3C",
             }}
           >
             📍 Find Us
           </Badge>
-          <h2 className="heading-section text-4xl lg:text-5xl font-bold text-white mb-4">
-            Book Your <span className="text-gradient-pink">Dream Look</span>
+          <h2
+            className="heading-section text-4xl lg:text-5xl font-bold mb-4"
+            style={{ color: "#2D1B0E" }}
+          >
+            Book Your <span className="text-gradient-brown">Dream Look</span>
           </h2>
-          <p className="text-white/55 max-w-lg mx-auto text-lg">
-            Based in Lucknow, serving brides across India. Reach out and let's
-            create your perfect bridal transformation.
+          <p className="max-w-lg mx-auto text-lg" style={{ color: "#6B4226" }}>
+            Based in Karwar, Karnataka — serving brides across Uttara Kannada
+            and beyond. Reach out and let's create your perfect transformation.
           </p>
         </motion.div>
 
@@ -131,24 +135,31 @@ export default function MapContactSection() {
                     key={item.label}
                     className="rounded-2xl p-5 flex flex-col gap-2"
                     style={{
-                      background: "rgba(26,26,46,0.7)",
-                      border: "1px solid rgba(233,30,99,0.12)",
+                      background: "rgba(255,255,255,0.88)",
+                      border: "1px solid rgba(196,149,106,0.22)",
                       backdropFilter: "blur(16px)",
+                      boxShadow: "0 2px 12px rgba(139,94,60,0.08)",
                     }}
-                    whileHover={{ y: -3, borderColor: "rgba(233,30,99,0.3)" }}
+                    whileHover={{
+                      y: -3,
+                      boxShadow: "0 8px 24px rgba(212,169,106,0.2)",
+                    }}
                     transition={{ duration: 0.3 }}
                   >
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center"
                       style={{
-                        background: `${item.color}18`,
-                        border: `1px solid ${item.color}30`,
+                        background: "rgba(212,169,106,0.15)",
+                        border: "1px solid rgba(196,149,106,0.3)",
                       }}
                     >
                       <Icon className="w-4 h-4" style={{ color: item.color }} />
                     </div>
                     <div>
-                      <p className="text-xs text-white/40 font-medium">
+                      <p
+                        className="text-xs font-medium"
+                        style={{ color: "#C4956A" }}
+                      >
                         {item.label}
                       </p>
                       {item.href ? (
@@ -158,12 +169,16 @@ export default function MapContactSection() {
                             item.href.startsWith("http") ? "_blank" : undefined
                           }
                           rel="noopener noreferrer"
-                          className="text-sm text-white font-medium hover:text-pink-light transition-colors"
+                          className="text-xs font-semibold transition-colors hover:opacity-70 break-words"
+                          style={{ color: "#2D1B0E" }}
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-white font-medium">
+                        <p
+                          className="text-xs font-semibold"
+                          style={{ color: "#2D1B0E" }}
+                        >
                           {item.value}
                         </p>
                       )}
@@ -173,12 +188,12 @@ export default function MapContactSection() {
               })}
             </motion.div>
 
-            {/* Google Maps embed */}
+            {/* Google Maps embed — Karwar, Karnataka */}
             <motion.div
               className="rounded-2xl overflow-hidden flex-1 min-h-64"
               style={{
-                border: "1px solid rgba(233,30,99,0.15)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                border: "1.5px solid rgba(196,149,106,0.28)",
+                boxShadow: "0 8px 32px rgba(139,94,60,0.12)",
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -186,27 +201,28 @@ export default function MapContactSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114984.25929395577!2d80.85135!3d26.84649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30853.123456789!2d74.1240!3d14.8003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca4dc3a3a3a3b%3A0x123456789abcdef0!2sKarwar%2C+Karnataka+581306!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="280"
-                style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg)" }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="AWM Makeovers - Lucknow Location"
+                title="Shreya Makeup & Hair - Karwar Location"
               />
             </motion.div>
 
             {/* WhatsApp CTA */}
             <motion.a
-              href="https://wa.me/919451819583?text=Hi%20Aastha%2C%20I%27d%20like%20to%20book%20a%20consultation!"
+              href="https://wa.me/919611366425?text=Hi%20Shreya%2C%20I'd%20like%20to%20book%20a%20consultation!"
               target="_blank"
               rel="noopener noreferrer"
               data-ocid="contact.whatsapp_button"
-              className="flex items-center justify-center gap-3 p-4 rounded-2xl text-white font-semibold text-base"
+              className="flex items-center justify-center gap-3 p-4 rounded-2xl font-semibold text-base"
               style={{
                 background: "linear-gradient(135deg, #25D366, #128C7E)",
                 boxShadow: "0 4px 20px rgba(37,211,102,0.3)",
+                color: "white",
               }}
               whileHover={{
                 scale: 1.02,
@@ -227,21 +243,24 @@ export default function MapContactSection() {
           <motion.div
             className="rounded-2xl p-8"
             style={{
-              background: "rgba(26,26,46,0.7)",
-              border: "1px solid rgba(233,30,99,0.15)",
+              background: "rgba(255,255,255,0.92)",
+              border: "1.5px solid rgba(196,149,106,0.28)",
               backdropFilter: "blur(24px)",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+              boxShadow: "0 8px 40px rgba(139,94,60,0.12)",
             }}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <h3 className="text-2xl font-bold text-white heading-section mb-2">
+            <h3
+              className="text-2xl font-bold heading-section mb-2"
+              style={{ color: "#2D1B0E" }}
+            >
               Send an Enquiry
             </h3>
-            <p className="text-sm text-white/50 mb-6">
-              Fill in your details and we'll send it straight to Aastha's
+            <p className="text-sm mb-6" style={{ color: "#8B5E3C" }}>
+              Fill in your details and we'll send it straight to Shreya's
               WhatsApp.
             </p>
 
@@ -249,12 +268,15 @@ export default function MapContactSection() {
               <div className="flex flex-col items-center justify-center py-12 gap-4">
                 <CheckCircle
                   className="w-16 h-16"
-                  style={{ color: "#E91E63" }}
+                  style={{ color: "#8B5E3C" }}
                 />
-                <p className="text-white font-semibold text-lg">
+                <p
+                  className="font-semibold text-lg"
+                  style={{ color: "#2D1B0E" }}
+                >
                   Redirected to WhatsApp!
                 </p>
-                <p className="text-white/50 text-sm text-center">
+                <p className="text-sm text-center" style={{ color: "#8B5E3C" }}>
                   Your details have been pre-filled. Just hit send!
                 </p>
               </div>
@@ -264,7 +286,8 @@ export default function MapContactSection() {
                   <div>
                     <Label
                       htmlFor="name"
-                      className="text-xs text-white/60 mb-1.5 block"
+                      className="text-xs mb-1.5 block"
+                      style={{ color: "#6B4226" }}
                     >
                       Your Name *
                     </Label>
@@ -272,19 +295,22 @@ export default function MapContactSection() {
                       id="name"
                       data-ocid="contact.name_input"
                       required
-                      placeholder="Priya Sharma"
+                      placeholder="Priya Shetty"
                       value={formData.name}
                       onChange={(e) =>
                         setFormData((p) => ({ ...p, name: e.target.value }))
                       }
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-pink-DEFAULT"
-                      style={{ borderColor: "rgba(233,30,99,0.2)" }}
+                      style={{
+                        borderColor: "rgba(196,149,106,0.4)",
+                        color: "#2D1B0E",
+                      }}
                     />
                   </div>
                   <div>
                     <Label
                       htmlFor="phone"
-                      className="text-xs text-white/60 mb-1.5 block"
+                      className="text-xs mb-1.5 block"
+                      style={{ color: "#6B4226" }}
                     >
                       Mobile Number *
                     </Label>
@@ -297,15 +323,18 @@ export default function MapContactSection() {
                       onChange={(e) =>
                         setFormData((p) => ({ ...p, phone: e.target.value }))
                       }
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
-                      style={{ borderColor: "rgba(233,30,99,0.2)" }}
+                      style={{
+                        borderColor: "rgba(196,149,106,0.4)",
+                        color: "#2D1B0E",
+                      }}
                     />
                   </div>
                 </div>
                 <div>
                   <Label
                     htmlFor="date"
-                    className="text-xs text-white/60 mb-1.5 block"
+                    className="text-xs mb-1.5 block"
+                    style={{ color: "#6B4226" }}
                   >
                     Wedding / Event Date
                   </Label>
@@ -317,31 +346,34 @@ export default function MapContactSection() {
                     onChange={(e) =>
                       setFormData((p) => ({ ...p, date: e.target.value }))
                     }
-                    className="bg-white/5 border-white/10 text-white"
                     style={{
-                      borderColor: "rgba(233,30,99,0.2)",
-                      colorScheme: "dark",
+                      borderColor: "rgba(196,149,106,0.4)",
+                      color: "#2D1B0E",
                     }}
                   />
                 </div>
                 <div>
                   <Label
                     htmlFor="message"
-                    className="text-xs text-white/60 mb-1.5 block"
+                    className="text-xs mb-1.5 block"
+                    style={{ color: "#6B4226" }}
                   >
                     Tell Us About Your Event
                   </Label>
                   <Textarea
                     id="message"
                     data-ocid="contact.message_input"
-                    placeholder="Bridal look for wedding on 15th Nov, lehenga is deep red, venue is Taj Mahal Hotel Lucknow..."
+                    placeholder="Bridal look for wedding on 15th Nov, silk saree is off-white with gold zari, venue is near Karwar beach..."
                     value={formData.message}
                     onChange={(e) =>
                       setFormData((p) => ({ ...p, message: e.target.value }))
                     }
                     rows={4}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/30 resize-none"
-                    style={{ borderColor: "rgba(233,30,99,0.2)" }}
+                    className="resize-none"
+                    style={{
+                      borderColor: "rgba(196,149,106,0.4)",
+                      color: "#2D1B0E",
+                    }}
                   />
                 </div>
                 <Button
@@ -350,8 +382,8 @@ export default function MapContactSection() {
                   size="lg"
                   className="w-full h-12 text-base font-semibold text-white mt-2"
                   style={{
-                    background: "linear-gradient(135deg, #E91E63, #C2185B)",
-                    boxShadow: "0 4px 20px rgba(233,30,99,0.35)",
+                    background: "linear-gradient(135deg, #8B5E3C, #C4956A)",
+                    boxShadow: "0 4px 20px rgba(139,94,60,0.3)",
                   }}
                 >
                   <Send className="w-4 h-4 mr-2" />

@@ -1,13 +1,12 @@
-import { r as reactExports, j as jsxRuntimeExports, m as motion } from "./index-qSaXK_m0.js";
-import { B as Badge } from "./badge-BAyG6EgK.js";
-import { B as Button } from "./button-D6n3Vb-9.js";
-import { R as REVISION, u as useFrame, M as MathUtils, C as Color, A as AdditiveBlending, V as Vector3, S as Spherical, a as ShaderMaterial, b as Canvas, c as Star } from "./star-Bl-Q1ikm.js";
-import { S as Sparkles } from "./sparkles-CfH5B7JF.js";
-import { A as Award, S as Sphere, M as MeshDistortMaterial } from "./award-MNkw7gw8.js";
-import { c as createLucideIcon } from "./createLucideIcon-BK_9rBQU.js";
-import { P as Phone } from "./phone-C6uMKMF2.js";
-const getVersion = () => parseInt(REVISION.replace(/\D+/g, ""));
-const version = /* @__PURE__ */ getVersion();
+import { r as reactExports, j as jsxRuntimeExports, m as motion } from "./index-C6sUuw8C.js";
+import { B as Badge } from "./badge-DqKpRZP4.js";
+import { B as Button } from "./button-B-15Jzot.js";
+import { u as useFrame, M as MathUtils, C as Canvas, S as Star } from "./star-DVylEgbG.js";
+import { S as Sparkles } from "./sparkles-C3bYJqTj.js";
+import { A as Award, S as Sphere, M as MeshDistortMaterial } from "./award-uRtjXfi-.js";
+import { c as createLucideIcon } from "./createLucideIcon-ZOu9CJEQ.js";
+import { P as Phone } from "./phone-CIXmFEYO.js";
+import { M as MapPin } from "./map-pin-DrpbUpyB.js";
 const Float = /* @__PURE__ */ reactExports.forwardRef(({
   children,
   enabled = true,
@@ -39,105 +38,6 @@ const Float = /* @__PURE__ */ reactExports.forwardRef(({
     matrixAutoUpdate: false
   }, children));
 });
-class StarfieldMaterial extends ShaderMaterial {
-  constructor() {
-    super({
-      uniforms: {
-        time: {
-          value: 0
-        },
-        fade: {
-          value: 1
-        }
-      },
-      vertexShader: (
-        /* glsl */
-        `
-      uniform float time;
-      attribute float size;
-      varying vec3 vColor;
-      void main() {
-        vColor = color;
-        vec4 mvPosition = modelViewMatrix * vec4(position, 0.5);
-        gl_PointSize = size * (30.0 / -mvPosition.z) * (3.0 + sin(time + 100.0));
-        gl_Position = projectionMatrix * mvPosition;
-      }`
-      ),
-      fragmentShader: (
-        /* glsl */
-        `
-      uniform sampler2D pointTexture;
-      uniform float fade;
-      varying vec3 vColor;
-      void main() {
-        float opacity = 1.0;
-        if (fade == 1.0) {
-          float d = distance(gl_PointCoord, vec2(0.5, 0.5));
-          opacity = 1.0 / (1.0 + exp(16.0 * (d - 0.25)));
-        }
-        gl_FragColor = vec4(vColor, opacity);
-
-        #include <tonemapping_fragment>
-	      #include <${version >= 154 ? "colorspace_fragment" : "encodings_fragment"}>
-      }`
-      )
-    });
-  }
-}
-const genStar = (r) => {
-  return new Vector3().setFromSpherical(new Spherical(r, Math.acos(1 - Math.random() * 2), Math.random() * 2 * Math.PI));
-};
-const Stars = /* @__PURE__ */ reactExports.forwardRef(({
-  radius = 100,
-  depth = 50,
-  count = 5e3,
-  saturation = 0,
-  factor = 4,
-  fade = false,
-  speed = 1
-}, ref) => {
-  const material = reactExports.useRef(null);
-  const [position, color, size] = reactExports.useMemo(() => {
-    const positions = [];
-    const colors = [];
-    const sizes = Array.from({
-      length: count
-    }, () => (0.5 + 0.5 * Math.random()) * factor);
-    const color2 = new Color();
-    let r = radius + depth;
-    const increment = depth / count;
-    for (let i = 0; i < count; i++) {
-      r -= increment * Math.random();
-      positions.push(...genStar(r).toArray());
-      color2.setHSL(i / count, saturation, 0.9);
-      colors.push(color2.r, color2.g, color2.b);
-    }
-    return [new Float32Array(positions), new Float32Array(colors), new Float32Array(sizes)];
-  }, [count, depth, factor, radius, saturation]);
-  useFrame((state) => material.current && (material.current.uniforms.time.value = state.clock.elapsedTime * speed));
-  const [starfieldMaterial] = reactExports.useState(() => new StarfieldMaterial());
-  return /* @__PURE__ */ reactExports.createElement("points", {
-    ref
-  }, /* @__PURE__ */ reactExports.createElement("bufferGeometry", null, /* @__PURE__ */ reactExports.createElement("bufferAttribute", {
-    attach: "attributes-position",
-    args: [position, 3]
-  }), /* @__PURE__ */ reactExports.createElement("bufferAttribute", {
-    attach: "attributes-color",
-    args: [color, 3]
-  }), /* @__PURE__ */ reactExports.createElement("bufferAttribute", {
-    attach: "attributes-size",
-    args: [size, 1]
-  })), /* @__PURE__ */ reactExports.createElement("primitive", {
-    ref: material,
-    object: starfieldMaterial,
-    attach: "material",
-    blending: AdditiveBlending,
-    "uniforms-fade-value": fade,
-    depthWrite: false,
-    transparent: true,
-    vertexColors: true
-  }));
-});
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -151,7 +51,7 @@ const __iconNode = [
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
 const Calendar = createLucideIcon("calendar", __iconNode);
-function AnimatedSphere({
+function GoldenOrb({
   position,
   color,
   size,
@@ -164,21 +64,21 @@ function AnimatedSphere({
       meshRef.current.rotation.y = state.clock.elapsedTime * speed * 0.6;
     }
   });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Float, { speed: 1.5, rotationIntensity: 0.5, floatIntensity: 1.2, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sphere, { ref: meshRef, args: [size, 64, 64], position, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Float, { speed: 1.4, rotationIntensity: 0.4, floatIntensity: 1.1, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sphere, { ref: meshRef, args: [size, 64, 64], position, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     MeshDistortMaterial,
     {
       color,
       attach: "material",
-      distort: 0.45,
-      speed: 3,
-      roughness: 0.1,
-      metalness: 0.8
+      distort: 0.35,
+      speed: 2.5,
+      roughness: 0.12,
+      metalness: 0.85
     }
   ) }) });
 }
-function ParticleField() {
+function WarmParticles() {
   const pointsRef = reactExports.useRef(null);
-  const count = 180;
+  const count = 160;
   const positions = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
     positions[i * 3] = (Math.random() - 0.5) * 18;
@@ -187,8 +87,8 @@ function ParticleField() {
   }
   useFrame((state) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.03;
-      pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.02) * 0.05;
+      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.025;
+      pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.018) * 0.04;
     }
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("points", { ref: pointsRef, children: [
@@ -196,99 +96,101 @@ function ParticleField() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "pointsMaterial",
       {
-        size: 0.055,
-        color: "#E91E63",
+        size: 0.045,
+        color: "#C4956A",
         transparent: true,
-        opacity: 0.7,
+        opacity: 0.55,
         sizeAttenuation: true
       }
     )
   ] });
 }
-function RingObject() {
+function GoldenRing() {
   const ringRef = reactExports.useRef(null);
   useFrame((state) => {
     if (ringRef.current) {
-      ringRef.current.rotation.x = state.clock.elapsedTime * 0.3;
-      ringRef.current.rotation.y = state.clock.elapsedTime * 0.2;
+      ringRef.current.rotation.x = state.clock.elapsedTime * 0.25;
+      ringRef.current.rotation.y = state.clock.elapsedTime * 0.18;
     }
   });
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { ref: ringRef, position: [3.5, 1, -2], children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("torusGeometry", { args: [1.2, 0.06, 16, 80] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("meshStandardMaterial", { color: "#C9A84C", metalness: 0.95, roughness: 0.05 })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { ref: ringRef, position: [3.8, 1.2, -2.5], children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("torusGeometry", { args: [1.3, 0.055, 16, 80] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("meshStandardMaterial", { color: "#D4A96A", metalness: 0.95, roughness: 0.04 })
+  ] });
+}
+function DiamondShape() {
+  const ref = reactExports.useRef(null);
+  useFrame((state) => {
+    if (ref.current) {
+      ref.current.rotation.y = state.clock.elapsedTime * 0.5;
+      ref.current.rotation.x = state.clock.elapsedTime * 0.3;
+    }
+  });
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { ref, position: [-4, -1.5, -3], children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("octahedronGeometry", { args: [0.55, 0] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("meshStandardMaterial", { color: "#8B5E3C", metalness: 0.9, roughness: 0.08 })
   ] });
 }
 function Scene3D() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ambientLight", { intensity: 0.3 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("pointLight", { position: [5, 5, 5], intensity: 1.5, color: "#E91E63" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("pointLight", { position: [-5, -5, 5], intensity: 0.8, color: "#C9A84C" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("ambientLight", { intensity: 0.7, color: "#FFF8F0" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("pointLight", { position: [5, 5, 5], intensity: 2, color: "#D4A96A" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("pointLight", { position: [-5, -3, 4], intensity: 1, color: "#C4956A" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "spotLight",
       {
-        position: [0, 10, 0],
-        angle: 0.3,
-        intensity: 1.2,
-        color: "#F06292"
+        position: [0, 8, 2],
+        angle: 0.35,
+        intensity: 1.5,
+        color: "#EDD9A3"
       }
     ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(WarmParticles, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Stars,
-      {
-        radius: 60,
-        depth: 50,
-        count: 600,
-        factor: 3,
-        saturation: 0.8,
-        fade: true,
-        speed: 0.8
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ParticleField, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AnimatedSphere,
+      GoldenOrb,
       {
         position: [-3.5, 1.5, -3],
-        color: "#E91E63",
-        size: 0.9,
-        speed: 0.8
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AnimatedSphere,
-      {
-        position: [4, -1.5, -4],
-        color: "#C9A84C",
-        size: 0.65,
-        speed: 1.1
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AnimatedSphere,
-      {
-        position: [-1.5, -2.5, -2],
-        color: "#F06292",
-        size: 0.45,
-        speed: 1.4
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AnimatedSphere,
-      {
-        position: [2.5, 3, -5],
-        color: "#9C27B0",
-        size: 0.55,
+        color: "#D4A96A",
+        size: 0.85,
         speed: 0.7
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(RingObject, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GoldenOrb,
+      {
+        position: [4, -1.5, -4],
+        color: "#C4956A",
+        size: 0.6,
+        speed: 1
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GoldenOrb,
+      {
+        position: [-1.5, -2.5, -2],
+        color: "#EDD9A3",
+        size: 0.42,
+        speed: 1.3
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GoldenOrb,
+      {
+        position: [2.5, 3, -5],
+        color: "#8B5E3C",
+        size: 0.5,
+        speed: 0.65
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GoldenRing, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DiamondShape, {})
   ] });
 }
 const stats = [
-  { value: "500+", label: "Brides Transformed" },
-  { value: "8+", label: "Years Experience" },
-  { value: "50+", label: "Celebrity Clients" },
-  { value: "100%", label: "5-Star Reviews" }
+  { value: "300+", label: "Brides Transformed" },
+  { value: "6+", label: "Years Experience" },
+  { value: "100%", label: "5-Star Reviews" },
+  { value: "On-Site", label: "Service Available" }
 ];
 function HeroSection() {
   const heroRef = reactExports.useRef(null);
@@ -299,10 +201,10 @@ function HeroSection() {
       "data-ocid": "hero.section",
       className: "relative min-h-screen flex items-center overflow-hidden",
       style: {
-        background: "linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 60%, #16213e 100%)"
+        background: "linear-gradient(135deg, #FAF6F0 0%, #F5EFE6 55%, #EDE0D0 100%)"
       },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-0 opacity-80", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           Canvas,
           {
             camera: { position: [0, 0, 8], fov: 55 },
@@ -315,7 +217,7 @@ function HeroSection() {
           {
             className: "absolute inset-0 z-1 pointer-events-none",
             style: {
-              background: "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(233,30,99,0.12) 0%, transparent 70%)"
+              background: "radial-gradient(ellipse 65% 55% at 30% 50%, rgba(212,169,106,0.18) 0%, transparent 70%)"
             }
           }
         ),
@@ -324,7 +226,7 @@ function HeroSection() {
           {
             className: "absolute inset-0 z-1 pointer-events-none",
             style: {
-              background: "radial-gradient(ellipse 40% 40% at 70% 60%, rgba(201,168,76,0.06) 0%, transparent 60%)"
+              background: "radial-gradient(ellipse 45% 45% at 72% 58%, rgba(196,149,106,0.12) 0%, transparent 60%)"
             }
           }
         ),
@@ -342,13 +244,13 @@ function HeroSection() {
                     {
                       className: "inline-flex items-center gap-2 mb-2 px-4 py-1.5 text-sm font-medium border",
                       style: {
-                        background: "rgba(233,30,99,0.1)",
-                        borderColor: "rgba(233,30,99,0.3)",
-                        color: "#F06292"
+                        background: "rgba(139,94,60,0.1)",
+                        borderColor: "rgba(139,94,60,0.3)",
+                        color: "#8B5E3C"
                       },
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3.5 h-3.5" }),
-                        "Celebrity Makeup Artist · Lucknow"
+                        "Premium Bridal Makeup Artist · Karwar, Karnataka"
                       ]
                     }
                   )
@@ -357,31 +259,33 @@ function HeroSection() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 motion.h1,
                 {
-                  className: "heading-display text-5xl lg:text-7xl font-bold text-white",
+                  className: "heading-display text-5xl lg:text-6xl font-bold",
+                  style: { color: "#2D1B0E" },
                   initial: { opacity: 0, y: 30 },
                   animate: { opacity: 1, y: 0 },
                   transition: { duration: 0.7, delay: 0.1 },
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-pink", children: "AWM" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-brown", children: "Shreya" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "Makeovers" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#2D1B0E" }, children: "Makeup" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-gold", children: "By Aastha" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-gold", children: "& Hair" })
                   ]
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 motion.p,
                 {
-                  className: "text-lg text-white/70 leading-relaxed max-w-md",
+                  className: "text-lg leading-relaxed max-w-md",
+                  style: { color: "#6B4226" },
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0 },
                   transition: { duration: 0.6, delay: 0.25 },
                   children: [
-                    "Lucknow's most celebrated bridal makeup artist — trusted by",
+                    "Karwar's most celebrated bridal makeup & hair styling artist — specialising in",
                     " ",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-white/90", children: "A-list celebrities" }),
-                    ", brides, and royalty. Every lehenga, every maang tikka, every moment — perfected with artistry."
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { color: "#8B5E3C" }, children: "South Indian bridal looks" }),
+                    ", saree draping, and luxurious hair transformations for your most precious moments."
                   ]
                 }
               ),
@@ -393,17 +297,18 @@ function HeroSection() {
                   animate: { opacity: 1, y: 0 },
                   transition: { duration: 0.6, delay: 0.35 },
                   children: [
-                    "Bollywood Approved",
-                    "Wedding Wire Top Artist",
-                    "Vogue Featured"
+                    "South Indian Specialist",
+                    "Bridal Hair Expert",
+                    "On-Venue Service"
                   ].map((badge) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                     "span",
                     {
-                      className: "flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full",
+                      className: "flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full",
                       style: {
-                        background: "rgba(201,168,76,0.12)",
-                        color: "#C9A84C",
-                        border: "1px solid rgba(201,168,76,0.25)"
+                        background: "rgba(212,169,106,0.15)",
+                        color: "#8B5E3C",
+                        border: "1px solid rgba(196,149,106,0.35)",
+                        boxShadow: "0 0 12px rgba(212,169,106,0.2)"
                       },
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx(Award, { className: "w-3 h-3" }),
@@ -425,7 +330,7 @@ function HeroSection() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "a",
                       {
-                        href: "https://wa.me/919451819583?text=Hi%20Aastha%2C%20I%27d%20like%20to%20book%20bridal%20makeup!",
+                        href: "https://wa.me/919611366425?text=Hi%20Shreya%2C%20I%27d%20like%20to%20book%20bridal%20makeup!",
                         target: "_blank",
                         rel: "noopener noreferrer",
                         children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -435,8 +340,8 @@ function HeroSection() {
                             size: "lg",
                             className: "relative h-12 px-8 text-base font-semibold text-white overflow-hidden group",
                             style: {
-                              background: "linear-gradient(135deg, #E91E63, #C2185B)",
-                              boxShadow: "0 4px 24px rgba(233,30,99,0.45)"
+                              background: "linear-gradient(135deg, #8B5E3C, #C4956A)",
+                              boxShadow: "0 4px 24px rgba(139,94,60,0.35), 0 0 40px rgba(212,169,106,0.2)"
                             },
                             children: [
                               /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-4 h-4 mr-2" }),
@@ -446,7 +351,7 @@ function HeroSection() {
                                 {
                                   className: "absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
                                   style: {
-                                    background: "linear-gradient(135deg, #F06292, #E91E63)"
+                                    background: "linear-gradient(135deg, #C4956A, #8B5E3C)"
                                   }
                                 }
                               )
@@ -463,9 +368,9 @@ function HeroSection() {
                         size: "lg",
                         className: "h-12 px-8 text-base font-semibold",
                         style: {
-                          borderColor: "rgba(233,30,99,0.4)",
-                          color: "#F06292",
-                          background: "rgba(233,30,99,0.06)"
+                          borderColor: "rgba(139,94,60,0.45)",
+                          color: "#8B5E3C",
+                          background: "rgba(212,169,106,0.08)"
                         },
                         children: "View Portfolio"
                       }
@@ -474,17 +379,37 @@ function HeroSection() {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                motion.a,
+                motion.div,
                 {
-                  href: "tel:+919451819583",
-                  "data-ocid": "hero.phone_link",
-                  className: "flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors w-fit",
+                  className: "flex flex-col gap-2",
                   initial: { opacity: 0 },
                   animate: { opacity: 1 },
                   transition: { delay: 0.6 },
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { className: "w-4 h-4", style: { color: "#E91E63" } }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", children: "+91 94518 19583" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "a",
+                      {
+                        href: "tel:+919611366425",
+                        "data-ocid": "hero.phone_link",
+                        className: "flex items-center gap-2 w-fit transition-colors",
+                        style: { color: "#6B4226" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { className: "w-4 h-4", style: { color: "#8B5E3C" } }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium", children: "+91 96113 66425" })
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-2",
+                        style: { color: "#6B4226" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { className: "w-4 h-4", style: { color: "#C4956A" } }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "Karwar, Karnataka 581306" })
+                        ]
+                      }
+                    )
                   ]
                 }
               )
@@ -506,8 +431,9 @@ function HeroSection() {
                     {
                       className: "absolute inset-0 rounded-3xl",
                       style: {
-                        background: "radial-gradient(ellipse at center, rgba(233,30,99,0.3) 0%, transparent 70%)",
-                        filter: "blur(24px)"
+                        background: "radial-gradient(ellipse at center, rgba(212,169,106,0.4) 0%, transparent 70%)",
+                        filter: "blur(28px)",
+                        transform: "scale(1.1)"
                       }
                     }
                   ),
@@ -516,14 +442,14 @@ function HeroSection() {
                     {
                       className: "relative w-72 h-80 lg:w-80 lg:h-96 rounded-3xl overflow-hidden",
                       style: {
-                        boxShadow: "0 24px 64px rgba(233,30,99,0.3), 0 0 0 1px rgba(233,30,99,0.2)"
+                        boxShadow: "0 24px 64px rgba(139,94,60,0.25), 0 0 0 3px rgba(212,169,106,0.4), 0 0 48px rgba(212,169,106,0.2)"
                       },
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "img",
                           {
                             src: "/assets/photo1.png",
-                            alt: "Aastha - Premium Bridal Makeup Artist",
+                            alt: "Shreya - Premium Bridal Makeup & Hair Artist, Karwar",
                             className: "w-full h-full object-cover"
                           }
                         ),
@@ -532,7 +458,7 @@ function HeroSection() {
                           {
                             className: "absolute inset-0",
                             style: {
-                              background: "linear-gradient(to top, rgba(13,13,26,0.5) 0%, transparent 50%)"
+                              background: "linear-gradient(to top, rgba(45,27,14,0.4) 0%, transparent 50%)"
                             }
                           }
                         )
@@ -549,17 +475,25 @@ function HeroSection() {
                         repeat: Number.POSITIVE_INFINITY,
                         ease: "easeInOut"
                       },
+                      style: { boxShadow: "0 8px 32px rgba(212,169,106,0.3)" },
                       children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx(
                           Star,
                           {
                             className: "w-4 h-4 fill-current",
-                            style: { color: "#C9A84C" }
+                            style: { color: "#D4A96A" }
                           }
                         ),
                         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-white", children: "5.0 Rating" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/50", children: "500+ Brides" })
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "text-xs font-semibold",
+                              style: { color: "#2D1B0E" },
+                              children: "5.0 Rating"
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#8B5E3C" }, children: "300+ Brides" })
                         ] })
                       ] })
                     }
@@ -575,9 +509,10 @@ function HeroSection() {
                         ease: "easeInOut",
                         delay: 1
                       },
+                      style: { boxShadow: "0 8px 32px rgba(212,169,106,0.3)" },
                       children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold", style: { color: "#E91E63" }, children: "Celebrity" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/70", children: "Makeup Artist" })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold", style: { color: "#8B5E3C" }, children: "Bridal" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#6B4226" }, children: "Hair Expert" })
                       ] })
                     }
                   )
@@ -596,13 +531,24 @@ function HeroSection() {
                 motion.div,
                 {
                   className: "glass rounded-2xl px-6 py-5 text-center",
+                  style: { boxShadow: "0 4px 20px rgba(212,169,106,0.15)" },
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0 },
                   transition: { delay: 0.8 + i * 0.1 },
-                  whileHover: { scale: 1.04 },
+                  whileHover: {
+                    scale: 1.04,
+                    boxShadow: "0 8px 32px rgba(212,169,106,0.28)"
+                  },
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-3xl font-bold heading-display text-gradient-pink", children: stat.value }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/50 mt-1 font-medium", children: stat.label })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-3xl font-bold heading-display text-gradient-brown", children: stat.value }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "p",
+                      {
+                        className: "text-xs mt-1 font-medium",
+                        style: { color: "#8B5E3C" },
+                        children: stat.label
+                      }
+                    )
                   ]
                 },
                 stat.label
@@ -620,12 +566,12 @@ function HeroSection() {
               "div",
               {
                 className: "w-6 h-10 rounded-full border-2 flex items-start justify-center pt-2",
-                style: { borderColor: "rgba(233,30,99,0.4)" },
+                style: { borderColor: "rgba(139,94,60,0.45)" },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
                     className: "w-1 h-3 rounded-full animate-pulse",
-                    style: { background: "#E91E63" }
+                    style: { background: "#C4956A" }
                   }
                 )
               }

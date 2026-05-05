@@ -3,8 +3,8 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingButtons() {
   const whatsappUrl =
-    "https://wa.me/919451819583?text=Hi%20Aastha%2C%20I%27d%20like%20to%20book%20a%20bridal%20makeup%20consultation!";
-  const instagramUrl = "https://www.instagram.com/awm_makeovers_by_aastha/";
+    "https://wa.me/919611366425?text=Hi%20Shreya%2C%20I'd%20like%20to%20book%20a%20bridal%20makeup%20consultation!";
+  const instagramUrl = "https://www.instagram.com/shreya_makeup_hair/";
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function FloatingButtons() {
         style={{
           background: "linear-gradient(135deg, #25D366, #128C7E)",
           boxShadow:
-            "0 4px 20px rgba(37, 211, 102, 0.45), 0 0 0 3px rgba(37,211,102,0.15)",
+            "0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 3px rgba(37,211,102,0.18), 0 0 40px rgba(37,211,102,0.2)",
         }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -39,9 +39,9 @@ export default function FloatingButtons() {
         aria-label="Follow on Instagram"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full"
         style={{
-          background: "linear-gradient(135deg, #E91E63, #9C27B0, #FF5722)",
+          background: "linear-gradient(135deg, #C4956A, #8B5E3C, #D4A96A)",
           boxShadow:
-            "0 4px 20px rgba(233, 30, 99, 0.5), 0 0 0 3px rgba(233,30,99,0.15)",
+            "0 4px 20px rgba(139, 94, 60, 0.45), 0 0 0 3px rgba(212,169,106,0.2), 0 0 40px rgba(212,169,106,0.2)",
         }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

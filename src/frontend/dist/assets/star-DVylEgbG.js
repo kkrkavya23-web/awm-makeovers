@@ -1,5 +1,5 @@
-import { r as reactExports, g as getDefaultExportFromCjs, R as React$2, j as jsxRuntimeExports } from "./index-qSaXK_m0.js";
-import { c as createLucideIcon } from "./createLucideIcon-BK_9rBQU.js";
+import { r as reactExports, g as getDefaultExportFromCjs, R as React$2, j as jsxRuntimeExports } from "./index-C6sUuw8C.js";
+import { c as createLucideIcon } from "./createLucideIcon-ZOu9CJEQ.js";
 /**
  * @license
  * Copyright 2010-2025 Three.js Authors
@@ -51420,15 +51420,9 @@ const __iconNode = [
 ];
 const Star = createLucideIcon("star", __iconNode);
 export {
-  AdditiveBlending as A,
-  Color as C,
+  Canvas as C,
   MathUtils as M,
-  REVISION as R,
-  Spherical as S,
-  Vector3 as V,
-  ShaderMaterial as a,
-  Canvas as b,
-  Star as c,
-  MeshPhysicalMaterial as d,
+  Star as S,
+  MeshPhysicalMaterial as a,
   useFrame as u
 };

@@ -6,34 +6,35 @@ import {
   Clock,
   Heart,
   MapPin,
+  MessageCircle,
+  Scissors,
   Shield,
   Star,
   Users,
-  Zap,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useRef } from "react";
 import type { Mesh } from "three";
 
-function Rotating3DIcon({
+function GoldenTorus({
   color,
   position,
 }: { color: string; position: [number, number, number] }) {
   const ref = useRef<Mesh>(null);
   useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.x = state.clock.elapsedTime * 0.6;
-      ref.current.rotation.y = state.clock.elapsedTime * 0.4;
+      ref.current.rotation.x = state.clock.elapsedTime * 0.55;
+      ref.current.rotation.y = state.clock.elapsedTime * 0.38;
     }
   });
   return (
     <Torus ref={ref} args={[0.5, 0.12, 16, 60]} position={position}>
       <MeshDistortMaterial
         color={color}
-        metalness={0.9}
-        roughness={0.1}
-        distort={0.2}
-        speed={2}
+        metalness={0.92}
+        roughness={0.08}
+        distort={0.18}
+        speed={1.8}
       />
     </Torus>
   );
@@ -42,66 +43,66 @@ function Rotating3DIcon({
 const whyPoints = [
   {
     icon: Award,
-    color: "#E91E63",
-    title: "Celebrity-Trusted Artistry",
+    color: "#8B5E3C",
+    title: "Bridal Specialist",
     description:
-      "Aastha has worked with Bollywood actresses, TV stars, and Lucknow's elite families. Her work has graced magazine covers, award shows, and viral social media moments.",
-    stat: "50+ Celebrity Clients",
+      "Deep expertise in South Indian bridal looks, silk saree coordination, temple jewellery matching, and Karnataka wedding traditions. Every bride gets a truly personalised look.",
+    stat: "South Indian Expert",
+  },
+  {
+    icon: Scissors,
+    color: "#C4956A",
+    title: "Hair Styling Expert",
+    description:
+      "From classic jasmine-adorned buns to modern braided updos and beach waves — Shreya's hair artistry transforms every bride's crowning glory into a work of art.",
+    stat: "Hair Transformation",
   },
   {
     icon: Star,
-    color: "#C9A84C",
-    title: "500+ Bridal Transformations",
+    color: "#D4A96A",
+    title: "300+ Brides Served",
     description:
-      "Over 500 brides have walked down the aisle in Aastha's signature artistry. Each look is custom-crafted — never templated, always breathtaking.",
-    stat: "500+ Brides",
-  },
-  {
-    icon: Zap,
-    color: "#F06292",
-    title: "Airbrush HD Technology",
-    description:
-      "Professional-grade HD airbrush equipment for a foundation so flawless it photographs like skin. Built to last 10+ hours through Lucknow's summer heat and monsoon humidity.",
-    stat: "HD Airbrush Tech",
+      "Over 300 brides across Karwar, Mangalore, Goa, and Karnataka have walked their aisle in Shreya's signature artistry. Each look is custom-crafted, never templated.",
+    stat: "300+ Brides",
   },
   {
     icon: Heart,
-    color: "#E91E63",
-    title: "Indian Bridal Specialist",
+    color: "#8B5E3C",
+    title: "South Indian Specialist",
     description:
-      "Deep expertise in lehenga colour matching, maang tikka placement, mehndi glow, and saree draping. Aastha understands Indian bridal beauty from the inside out.",
-    stat: "Bridal Specialist",
-  },
-  {
-    icon: Clock,
-    color: "#C9A84C",
-    title: "Punctual & Professional",
-    description:
-      "Never a late start on your most important day. Aastha's team operates with military precision — hair, makeup, and draping — all on schedule.",
-    stat: "Always On Time",
-  },
-  {
-    icon: MapPin,
-    color: "#F06292",
-    title: "Home & Venue Service",
-    description:
-      "We come to you. Whether it's your home, hotel suite, or wedding venue across Lucknow and beyond — we bring the luxury salon experience to your doorstep.",
-    stat: "Doorstep Service",
+      "Specialising in Kannada, Tulu, Kodava, and Konkani wedding traditions. Understanding silk sarees, traditional ornaments, and cultural bridal aesthetics inside out.",
+    stat: "Cultural Expert",
   },
   {
     icon: Shield,
-    color: "#E91E63",
-    title: "Premium Certified Products",
+    color: "#C4956A",
+    title: "Premium Products Only",
     description:
       "MAC, NARS, Charlotte Tilbury, and international luxury brands only. Hypoallergenic options for sensitive skin. Your skin's safety is as important as your beauty.",
-    stat: "Luxury Products Only",
+    stat: "Luxury Products",
+  },
+  {
+    icon: MapPin,
+    color: "#D4A96A",
+    title: "On-Venue Service",
+    description:
+      "We come to you at home, hotel suite, or wedding venue across Karwar, Goa border areas, Uttara Kannada, and beyond. Luxury salon experience at your doorstep.",
+    stat: "Doorstep Service",
+  },
+  {
+    icon: Clock,
+    color: "#8B5E3C",
+    title: "Punctual & Professional",
+    description:
+      "Never a late start on your most important day. Shreya's team operates with precision — hair, makeup, and styling — all on schedule so you're never rushed.",
+    stat: "Always On Time",
   },
   {
     icon: Users,
-    color: "#C9A84C",
-    title: "Consultations Included",
+    color: "#C4956A",
+    title: "Free Consultation",
     description:
-      "Every booking includes a pre-bridal consultation to understand your vision, skin tone, lehenga palette, and wedding theme — ensuring the final look is perfectly you.",
+      "Every booking includes a complimentary pre-bridal consultation to understand your vision, skin tone, saree palette, and wedding theme for the perfect look.",
     stat: "Free Consultation",
   },
 ];
@@ -116,9 +117,10 @@ function WhyCard({
       data-ocid={`why.item.${index + 1}`}
       className="group relative rounded-2xl p-6 flex flex-col gap-4"
       style={{
-        background: "rgba(26,26,46,0.6)",
-        border: "1px solid rgba(233,30,99,0.1)",
+        background: "rgba(255,255,255,0.85)",
+        border: "1px solid rgba(196,149,106,0.2)",
         backdropFilter: "blur(20px)",
+        boxShadow: "0 4px 16px rgba(139,94,60,0.08)",
       }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -130,16 +132,16 @@ function WhyCard({
       }}
       whileHover={{
         y: -6,
-        border: "1px solid rgba(233,30,99,0.3)",
-        boxShadow: "0 12px 40px rgba(233,30,99,0.15)",
+        border: "1px solid rgba(212,169,106,0.4)",
+        boxShadow:
+          "0 12px 40px rgba(212,169,106,0.2), 0 0 0 1px rgba(212,169,106,0.15)",
       }}
     >
-      {/* Icon */}
       <motion.div
         className="w-12 h-12 rounded-2xl flex items-center justify-center"
         style={{
-          background: `${point.color}18`,
-          border: `1px solid ${point.color}30`,
+          background: `rgba(${point.color === "#8B5E3C" ? "139,94,60" : point.color === "#C4956A" ? "196,149,106" : "212,169,106"},0.12)`,
+          border: `1px solid rgba(${point.color === "#8B5E3C" ? "139,94,60" : point.color === "#C4956A" ? "196,149,106" : "212,169,106"},0.28)`,
         }}
         whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ type: "spring", stiffness: 300 }}
@@ -147,35 +149,33 @@ function WhyCard({
         <Icon className="w-5 h-5" style={{ color: point.color }} />
       </motion.div>
 
-      {/* Content */}
       <div>
-        <div className="flex items-center gap-2 mb-1">
-          <h3 className="text-base font-bold text-white">{point.title}</h3>
-        </div>
-        <p className="text-sm text-white/55 leading-relaxed">
+        <h3 className="text-base font-bold mb-1" style={{ color: "#2D1B0E" }}>
+          {point.title}
+        </h3>
+        <p className="text-sm leading-relaxed" style={{ color: "#6B4226" }}>
           {point.description}
         </p>
       </div>
 
-      {/* Stat badge */}
       <div className="mt-auto">
         <span
           className="text-xs font-semibold px-3 py-1 rounded-full"
           style={{
-            background: `${point.color}15`,
-            color: point.color,
-            border: `1px solid ${point.color}25`,
+            background: "rgba(212,169,106,0.12)",
+            color: "#8B5E3C",
+            border: "1px solid rgba(196,149,106,0.28)",
           }}
         >
-          ✦ {point.stat}
+          ✶ {point.stat}
         </span>
       </div>
 
-      {/* Hover glow */}
       <div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse at top left, ${point.color}08 0%, transparent 60%)`,
+          background:
+            "radial-gradient(ellipse at top left, rgba(212,169,106,0.08) 0%, transparent 60%)",
         }}
       />
     </motion.div>
@@ -188,16 +188,16 @@ export default function WhyChooseUsSection() {
       data-ocid="why.section"
       className="relative py-24 overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #16213e 0%, #0d0d1a 100%)",
+        background: "linear-gradient(180deg, #EDE0D0 0%, #F5EFE6 100%)",
       }}
     >
       {/* 3D accent */}
-      <div className="absolute right-0 top-0 w-96 h-96 opacity-20">
+      <div className="absolute right-0 top-0 w-96 h-96 opacity-15">
         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-          <ambientLight intensity={0.4} />
-          <pointLight position={[3, 3, 3]} color="#E91E63" intensity={2} />
-          <Rotating3DIcon color="#E91E63" position={[-1.5, 0.5, 0]} />
-          <Rotating3DIcon color="#C9A84C" position={[1.2, -0.8, 0]} />
+          <ambientLight intensity={0.8} />
+          <pointLight position={[3, 3, 3]} color="#D4A96A" intensity={2} />
+          <GoldenTorus color="#D4A96A" position={[-1.5, 0.5, 0]} />
+          <GoldenTorus color="#C4956A" position={[1.2, -0.8, 0]} />
         </Canvas>
       </div>
 
@@ -205,7 +205,7 @@ export default function WhyChooseUsSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 80% 30%, rgba(233,30,99,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 40% at 80% 30%, rgba(212,169,106,0.12) 0%, transparent 60%)",
         }}
       />
 
@@ -221,20 +221,26 @@ export default function WhyChooseUsSection() {
           <Badge
             className="mb-4 px-4 py-1.5 text-sm"
             style={{
-              background: "rgba(233,30,99,0.1)",
-              border: "1px solid rgba(233,30,99,0.3)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.28)",
+              color: "#8B5E3C",
             }}
           >
-            ✦ Why AWM
+            ✶ Why Shreya
           </Badge>
-          <h2 className="heading-section text-4xl lg:text-5xl font-bold text-white mb-4">
-            Why Choose <span className="text-gradient-pink">Aastha?</span>
+          <h2
+            className="heading-section text-4xl lg:text-5xl font-bold mb-4"
+            style={{ color: "#2D1B0E" }}
+          >
+            Why Choose <span className="text-gradient-brown">Shreya?</span>
           </h2>
-          <p className="text-white/55 max-w-xl mx-auto text-lg leading-relaxed">
-            Because your wedding day is not the time for "good enough" — it's
-            the time for extraordinary. Here's why thousands of brides trust AWM
-            Makeovers.
+          <p
+            className="max-w-xl mx-auto text-lg leading-relaxed"
+            style={{ color: "#6B4226" }}
+          >
+            Because your wedding day is not the time for “good enough” — it's
+            the time for extraordinary. Here’s why brides across Karnataka trust
+            Shreya Makeup &amp; Hair.
           </p>
         </motion.div>
 
@@ -245,14 +251,15 @@ export default function WhyChooseUsSection() {
           ))}
         </div>
 
-        {/* Celebrity endorsement banner */}
+        {/* Premium banner */}
         <motion.div
           className="mt-16 rounded-3xl p-8 text-center relative overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg, rgba(233,30,99,0.12), rgba(26,26,46,0.8))",
-            border: "1px solid rgba(233,30,99,0.2)",
+              "linear-gradient(135deg, rgba(139,94,60,0.1), rgba(255,255,255,0.85))",
+            border: "1.5px solid rgba(212,169,106,0.4)",
             backdropFilter: "blur(20px)",
+            boxShadow: "0 8px 40px rgba(212,169,106,0.2)",
           }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -263,19 +270,39 @@ export default function WhyChooseUsSection() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at center, rgba(233,30,99,0.08) 0%, transparent 70%)",
+                "radial-gradient(ellipse at center, rgba(212,169,106,0.12) 0%, transparent 70%)",
             }}
           />
-          <p className="text-2xl font-bold text-white heading-section mb-2 relative z-10">
-            ⭐ Trusted by{" "}
-            <span className="text-gradient-pink">Bollywood Celebrities</span> &
-            Lucknow's Elite
+          <p
+            className="text-2xl font-bold heading-section mb-2 relative z-10"
+            style={{ color: "#2D1B0E" }}
+          >
+            ☆ Trusted by{" "}
+            <span className="text-gradient-brown">Karnataka Brides</span> &amp;
+            Families
           </p>
-          <p className="text-white/60 relative z-10 max-w-2xl mx-auto">
-            From red carpet premieres to intimate bridal chambers — Aastha's
-            artistry has been chosen by the stars. When you book AWM, you get
-            the same quality your favourite celebrities rely on.
+          <p
+            className="relative z-10 max-w-2xl mx-auto"
+            style={{ color: "#6B4226" }}
+          >
+            From intimate pooja ceremonies to grand wedding receptions in
+            Karwar, Mangalore, and beyond — Shreya’s artistry has been chosen by
+            hundreds of brides. When you book Shreya, you get the same premium
+            quality every bride deserves.
           </p>
+          <a
+            href="https://wa.me/919611366425?text=Hi%20Shreya%2C%20I'd%20like%20to%20book%20a%20consultation!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-6 px-8 py-3.5 rounded-full text-sm font-semibold text-white relative z-10 transition-all hover:scale-105"
+            style={{
+              background: "linear-gradient(135deg, #8B5E3C, #C4956A)",
+              boxShadow: "0 4px 20px rgba(139,94,60,0.3)",
+            }}
+          >
+            <MessageCircle className="w-4 h-4" />
+            Book a Free Consultation
+          </a>
         </motion.div>
       </div>
     </section>

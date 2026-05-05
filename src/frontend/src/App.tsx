@@ -16,28 +16,22 @@ function SectionFallback() {
   return (
     <div
       className="min-h-screen flex items-center justify-center"
-      style={{ background: "var(--color-dark-deep)" }}
+      style={{ background: "var(--color-cream)" }}
     >
       <div
-        className="w-12 h-12 rounded-full border-2 border-t-transparent animate-spin"
-        style={{ borderColor: "#E91E63", borderTopColor: "transparent" }}
+        className="w-12 h-12 rounded-full border-2 animate-spin"
+        style={{ borderColor: "#C4956A", borderTopColor: "transparent" }}
       />
     </div>
   );
 }
 
 export default function App() {
-  // Force dark mode
-  useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
-
   return (
     <div
       className="relative min-h-screen"
-      style={{ background: "var(--color-dark-deep)" }}
+      style={{ background: "var(--color-cream)" }}
     >
-      {/* Navigation hint element */}
       <a
         href="#hero"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg"
@@ -93,11 +87,8 @@ export default function App() {
         </footer>
       </Suspense>
 
-      {/* Floating WhatsApp + Instagram buttons */}
       <FloatingButtons />
-
-      {/* Toast notifications */}
-      <Toaster position="top-right" theme="dark" />
+      <Toaster position="top-right" />
     </div>
   );
 }

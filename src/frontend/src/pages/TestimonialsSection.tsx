@@ -10,15 +10,15 @@ function FloatingDiamond({ position }: { position: [number, number, number] }) {
   const ref = useRef<Mesh>(null);
   useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.y = state.clock.elapsedTime * 0.6;
+      ref.current.rotation.y = state.clock.elapsedTime * 0.55;
       ref.current.position.y =
-        position[1] + Math.sin(state.clock.elapsedTime * 0.7) * 0.3;
+        position[1] + Math.sin(state.clock.elapsedTime * 0.65) * 0.3;
     }
   });
   return (
     <mesh ref={ref} position={position}>
       <octahedronGeometry args={[0.4, 0]} />
-      <meshStandardMaterial color="#E91E63" metalness={0.9} roughness={0.05} />
+      <meshStandardMaterial color="#D4A96A" metalness={0.92} roughness={0.04} />
     </mesh>
   );
 }
@@ -26,77 +26,77 @@ function FloatingDiamond({ position }: { position: [number, number, number] }) {
 const reviews: Review[] = [
   {
     id: 1,
-    name: "Priya Sharma",
-    role: "Television Actress",
+    name: "Priya Shetty",
+    role: "Bride, November 2025",
     rating: 5,
-    text: "Aastha is simply magical. She did my makeup for the Star Plus awards — I've never felt so beautiful in my life. The camera loved every angle. She truly understands how light interacts with makeup.",
-    location: "Mumbai",
-    isCelebrity: true,
-    event: "Star Plus Awards 2024",
+    text: "Shreya made my wedding day absolutely magical! My silk saree bridal look was exactly what I dreamed of — the maang tikka placement, the temple jewellery coordination, everything was perfect. My photos are breathtaking.",
+    location: "Karwar",
+    event: "Traditional Karnataka Wedding",
   },
   {
     id: 2,
-    name: "Kavya Reddy",
-    role: "Bride, December 2024",
+    name: "Kavitha Nayak",
+    role: "Bride, January 2026",
     rating: 5,
-    text: "I was so nervous about my bridal makeup, but Aastha instantly made me feel at ease. My lehenga was a deep crimson and she matched every element perfectly — the maang tikka, the eyeshadow, the lips. I cried when I saw myself.",
-    location: "Lucknow",
-    event: "Grand Wedding at Taj Mahal Hotel",
+    text: "I was so nervous about bridal makeup but Shreya instantly put me at ease. She understood my vision and created a look even more beautiful than my reference photos. My engagement glow was stunning!",
+    location: "Karwar",
+    event: "Engagement & Wedding Package",
+    isCelebrity: false,
   },
   {
     id: 3,
-    name: "Deepika Malhotra",
-    role: "Influencer & Content Creator",
+    name: "Ananya Hegde",
+    role: "Bride, February 2026",
     rating: 5,
-    text: "Hired Aastha for a fashion shoot and honestly she's a genius. The Bollywood editorial look she created got 2 lakh likes on Instagram. Brands are now reaching out asking who did my makeup!",
-    location: "Delhi",
+    text: "Shreya's hair styling is in a class of its own. The jasmine floral bun she created for my Kodava wedding was absolutely exquisite — traditional yet modern. She truly understands South Indian bridal aesthetics.",
+    location: "Coorg",
     isCelebrity: true,
-    event: "Vogue India Collaboration",
+    event: "Kodava Traditional Wedding",
   },
   {
     id: 4,
-    name: "Ananya Gupta",
-    role: "Bride, February 2025",
+    name: "Rohini Kulkarni",
+    role: "Bride, December 2025",
     rating: 5,
-    text: "My wedding was in 40°C heat in June and Aastha's makeup stayed absolutely flawless for 14 hours. From baraat to vidaai — not a crease, not a smudge. Worth every rupee. My photos are stunning.",
-    location: "Lucknow",
-    event: "Garden Wedding, Lucknow",
+    text: "My makeup stayed flawless for 12 hours in the Karwar heat — from the morning rituals to the reception at night. Not a crease, not a smudge. Worth every rupee! The touch-up kit was a wonderful bonus.",
+    location: "Karwar",
+    event: "Full Day Bridal Package",
   },
   {
     id: 5,
-    name: "Riya Kapoor",
-    role: "Model",
-    rating: 5,
-    text: "I've worked with makeup artists across India. Aastha is in a different league entirely. Her technique, her product knowledge, her dedication to perfection — she's the best I've encountered. Truly celebrity-grade.",
-    location: "Lucknow",
-    isCelebrity: true,
-  },
-  {
-    id: 6,
-    name: "Sunita Verma",
+    name: "Deepa Rao",
     role: "Mother of the Bride",
     rating: 5,
-    text: "Not only did Aastha make my daughter look like a queen, she also did my makeup for the reception. At 52, I felt 30 again! She has a gift for making every woman feel extraordinary.",
-    location: "Kanpur",
+    text: "Not only did Shreya make my daughter look like a goddess, she also did my makeup for the reception. At 55, I felt 35 again! She has such a gift for making every woman feel extraordinary and confident.",
+    location: "Mangalore",
     event: "Family Wedding Package",
   },
   {
-    id: 7,
-    name: "Meera Nair",
-    role: "Bride, October 2024",
+    id: 6,
+    name: "Sunita Gowda",
+    role: "Bride, March 2026",
     rating: 5,
-    text: "Aastha understood my vision better than I did! I showed her one reference image and she created something even more beautiful. The consultation was so thorough — she asked about my personality, not just my lehenga.",
-    location: "Lucknow",
+    text: "Shreya was so professional and punctual. She arrived early, had everything ready, and the bridal look she created complemented my Kanjivaram saree perfectly. My wedding photos look like they're from a magazine!",
+    location: "Hubli",
+    event: "Kanjivaram Silk Bridal Look",
+  },
+  {
+    id: 7,
+    name: "Meera Kamath",
+    role: "Bride, October 2025",
+    rating: 5,
+    text: "I showed Shreya one reference image and she created something even more beautiful. The consultation was so thorough — she asked about my personality, my saree colour, my jewellery. Every detail mattered to her.",
+    location: "Karwar",
   },
   {
     id: 8,
-    name: "Pooja Singh",
-    role: "Bollywood Background Dancer",
+    name: "Pooja Hebbar",
+    role: "Bride, April 2026",
     rating: 5,
-    text: "We needed makeup for a big Bollywood item number shoot. Aastha arrived at 4 AM without complaint and had 8 of us camera-ready by 6 AM. Flawless. Fast. Professional. The director himself complimented her work.",
-    location: "Lucknow",
+    text: "The hair transformation Shreya did for my reception was jaw-dropping. The braided updo with fresh flowers and gold pins was so elegant. She understands Karnataka bridal traditions beautifully.",
+    location: "Sirsi",
     isCelebrity: true,
-    event: "Bollywood Film Production",
+    event: "Reception Hair & Makeup",
   },
 ];
 
@@ -105,72 +105,72 @@ function ReviewCard({ review }: { review: Review }) {
     <motion.div
       className="relative rounded-2xl p-7 flex flex-col gap-5 h-full"
       style={{
-        background: "rgba(26,26,46,0.7)",
-        border: "1px solid rgba(233,30,99,0.12)",
+        background: "rgba(255,255,255,0.9)",
+        border: "1px solid rgba(196,149,106,0.22)",
         backdropFilter: "blur(20px)",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.35)",
+        boxShadow: "0 4px 24px rgba(139,94,60,0.1)",
       }}
       whileHover={{
         y: -4,
         boxShadow:
-          "0 12px 40px rgba(233,30,99,0.18), 0 0 0 1px rgba(233,30,99,0.2)",
+          "0 12px 40px rgba(212,169,106,0.22), 0 0 0 1.5px rgba(212,169,106,0.3)",
       }}
       transition={{ duration: 0.3 }}
     >
-      {/* Quote icon */}
-      <Quote className="w-8 h-8 opacity-30" style={{ color: "#E91E63" }} />
+      <Quote className="w-8 h-8 opacity-25" style={{ color: "#C4956A" }} />
 
-      {/* Stars */}
       <div className="flex gap-1">
         {Array.from({ length: review.rating }, (_, i) => `s${i}`).map((key) => (
           <Star
             key={key}
             className="w-4 h-4 fill-current"
-            style={{ color: "#C9A84C" }}
+            style={{ color: "#D4A96A" }}
           />
         ))}
       </div>
 
-      {/* Text */}
-      <p className="text-white/75 text-sm leading-relaxed flex-1">
-        "{review.text}"
+      <p
+        className="text-sm leading-relaxed flex-1"
+        style={{ color: "#6B4226" }}
+      >
+        “{review.text}”
       </p>
 
-      {/* Event */}
       {review.event && (
-        <p className="text-xs" style={{ color: "rgba(201,168,76,0.7)" }}>
+        <p className="text-xs" style={{ color: "rgba(196,149,106,0.85)" }}>
           📍 {review.event}
         </p>
       )}
 
-      {/* Author */}
       <div
         className="flex items-center gap-3 pt-3 border-t"
-        style={{ borderColor: "rgba(233,30,99,0.12)" }}
+        style={{ borderColor: "rgba(196,149,106,0.2)" }}
       >
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm"
-          style={{ background: "linear-gradient(135deg, #E91E63, #C2185B)" }}
+          style={{ background: "linear-gradient(135deg, #8B5E3C, #C4956A)" }}
         >
           {review.name[0]}
         </div>
         <div>
           <div className="flex items-center gap-2">
-            <p className="text-sm font-semibold text-white">{review.name}</p>
+            <p className="text-sm font-semibold" style={{ color: "#2D1B0E" }}>
+              {review.name}
+            </p>
             {review.isCelebrity && (
               <Badge
                 className="text-xs px-2 py-0"
                 style={{
-                  background: "rgba(201,168,76,0.2)",
-                  color: "#C9A84C",
-                  border: "1px solid rgba(201,168,76,0.3)",
+                  background: "rgba(212,169,106,0.18)",
+                  color: "#8B5E3C",
+                  border: "1px solid rgba(196,149,106,0.35)",
                 }}
               >
-                ⭐ Celebrity
+                ★ Featured
               </Badge>
             )}
           </div>
-          <p className="text-xs text-white/45">
+          <p className="text-xs" style={{ color: "#8B5E3C" }}>
             {review.role} · {review.location}
           </p>
         </div>
@@ -190,14 +190,14 @@ export default function TestimonialsSection() {
       data-ocid="testimonials.section"
       className="relative py-24 overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #1a1a2e 0%, #16213e 100%)",
+        background: "linear-gradient(180deg, #F5EFE6 0%, #EDE0D0 100%)",
       }}
     >
       {/* 3D accents */}
-      <div className="absolute left-0 top-0 w-72 h-72 opacity-25">
+      <div className="absolute left-0 top-0 w-72 h-72 opacity-20">
         <Canvas camera={{ position: [0, 0, 5], fov: 55 }}>
-          <ambientLight intensity={0.4} />
-          <pointLight position={[2, 2, 2]} color="#E91E63" intensity={2} />
+          <ambientLight intensity={0.8} />
+          <pointLight position={[2, 2, 2]} color="#D4A96A" intensity={2} />
           <FloatingDiamond position={[0, 0, 0]} />
           <FloatingDiamond position={[2, -1, -1]} />
         </Canvas>
@@ -207,7 +207,7 @@ export default function TestimonialsSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(233,30,99,0.05) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(212,169,106,0.1) 0%, transparent 70%)",
         }}
       />
 
@@ -223,20 +223,22 @@ export default function TestimonialsSection() {
           <Badge
             className="mb-4 px-4 py-1.5 text-sm"
             style={{
-              background: "rgba(233,30,99,0.1)",
-              border: "1px solid rgba(233,30,99,0.3)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.28)",
+              color: "#8B5E3C",
             }}
           >
-            ⭐ Real Stories
+            ★ Real Stories
           </Badge>
-          <h2 className="heading-section text-4xl lg:text-5xl font-bold text-white mb-4">
-            What{" "}
-            <span className="text-gradient-pink">Celebrities & Brides</span> Say
+          <h2
+            className="heading-section text-4xl lg:text-5xl font-bold mb-4"
+            style={{ color: "#2D1B0E" }}
+          >
+            What Our <span className="text-gradient-brown">Brides Say</span>
           </h2>
-          <p className="text-white/55 max-w-lg mx-auto text-lg">
-            Don't take our word for it — hear from the brides, celebrities, and
-            personalities who trusted Aastha with their most important moments.
+          <p className="max-w-lg mx-auto text-lg" style={{ color: "#6B4226" }}>
+            Real stories from brides across Karnataka who trusted Shreya with
+            their most precious moments.
           </p>
         </motion.div>
 
@@ -265,9 +267,9 @@ export default function TestimonialsSection() {
             data-ocid="testimonials.pagination_prev"
             className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
             style={{
-              background: "rgba(233,30,99,0.12)",
-              border: "1px solid rgba(233,30,99,0.25)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.25)",
+              color: "#8B5E3C",
             }}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -281,7 +283,7 @@ export default function TestimonialsSection() {
                 data-ocid={`testimonials.page.${i + 1}`}
                 className="w-2.5 h-2.5 rounded-full transition-all"
                 style={{
-                  background: page === i ? "#E91E63" : "rgba(233,30,99,0.25)",
+                  background: page === i ? "#8B5E3C" : "rgba(139,94,60,0.25)",
                   transform: page === i ? "scale(1.3)" : "scale(1)",
                 }}
               />
@@ -294,9 +296,9 @@ export default function TestimonialsSection() {
             data-ocid="testimonials.pagination_next"
             className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
             style={{
-              background: "rgba(233,30,99,0.12)",
-              border: "1px solid rgba(233,30,99,0.25)",
-              color: "#F06292",
+              background: "rgba(139,94,60,0.1)",
+              border: "1px solid rgba(139,94,60,0.25)",
+              color: "#8B5E3C",
             }}
           >
             <ChevronRight className="w-5 h-5" />
